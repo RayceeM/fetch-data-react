@@ -1,7 +1,13 @@
 import { useState, useEffect } from 'react'
 
+type Product = {
+  id: number
+  title: string
+  image: string
+}
+
 export default function fetchData() {
-const [products, setProducts] = useState([])
+const [products, setProducts] = useState<Product>([])
 
 // use fetch api;provide empty dependencies array as the second argument, 
 // so that our request is only made once
