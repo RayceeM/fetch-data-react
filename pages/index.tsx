@@ -1,10 +1,21 @@
 import { useState, useEffect } from 'react'
+import styled from "styled-components"
+
 
 type Product = {
   id: number
   title: string
   image: string
 }
+
+const ProductList = styled.li`
+list-style: none;
+border-style: solid;
+display: inline-block;
+width: auto;
+margin: 16px;
+padding: 16px;`
+;
 
 export default function fetchData() {
 const [products, setProducts] = useState<Product>([])
@@ -20,10 +31,10 @@ useEffect(async() => {
   return (
     <ul>
       {products.map((product) => 
-     <li key={product.id}>
+     <ProductList key={product.id}>
        <h3>{product.title}</h3>
-       <img src={product.image} alt={`product is ${product.name}`}/>
-     </li> )}
+       <img src={product.image} height={30} width={30} alt={`product is ${product.name}`}/>
+     </ProductList> )}
      
     </ul>
   )
