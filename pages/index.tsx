@@ -22,7 +22,7 @@ useEffect(async() => {
       {products.map((product) => 
      <li key={product.id}>
        <h3>{product.title}</h3>
-       <img src={product.image} />
+       <img src={product.image} alt={`product is ${product.name}`}/>
      </li> )}
      
     </ul>
